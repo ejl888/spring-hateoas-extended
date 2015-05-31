@@ -1,11 +1,22 @@
-version '0.1.0'
+version '0.1.0-SNAPSHOT'
 
-apply plugin : 'java'
+group 'nl.my888'
+
+apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 
 repositories {
     mavenCentral()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///Users/ejl/.m2/myRepository")
+        }
+    }
 }
 
 dependencies {
